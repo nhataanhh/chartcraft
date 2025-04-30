@@ -1,0 +1,57 @@
+/* Căn giữa tiêu đề và mô tả */
+h1, p {
+  text-align: center;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.chart {
+  text-align: center;
+  flex: 1;
+  margin: 10px;
+}
+
+.chart img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Tinh gọn transition */
+}
+
+/* Hiệu ứng hover */
+.btn:hover {
+  background-color: #45a049;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.7);
+  transform: scale(1.1);
+}
+@keyframes rotateCharacter {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+
+
+
