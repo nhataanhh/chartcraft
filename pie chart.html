@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Pie Chart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Create Your Pie Chart</h1>
+
+  <div class="form-container">
+    <label for="chartTitle">Chart Title:</label>
+    <input type="text" id="chartTitle" placeholder="Enter chart title">
+
+    <div id="variables-container">
+      <div class="variable">
+        <input type="text" class="label" placeholder="Tên biến 1">
+        <input type="number" class="value" placeholder="Phần trăm (%)" min="0" max="100">
+      </div>
+      <div class="variable">
+        <input type="text" class="label" placeholder="Tên biến 2">
+        <input type="number" class="value" placeholder="Phần trăm (%)" min="0" max="100">
+      </div>
+    </div>
+
+    <button onclick="addVariable()">+ Add Variable</button>
+    <p id="warning" class="warning"></p>
+
+    <button onclick="generatePieChart()">Create Chart</button>
+  </div>
+
+  <div id="chart-output">
+    <canvas id="pieCanvas" width="400" height="400"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="pie chart.js"></script>
+</body>
+</html>

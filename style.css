@@ -34,7 +34,7 @@ h1, p {
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Tinh gọn transition */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hiệu ứng hover */
@@ -52,6 +52,57 @@ h1, p {
   }
 }
 
+/* Giao diện form nhập dữ liệu biểu đồ */
+.form-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
 
+/* Input và vùng nhập liệu */
+.form-container input {
+  width: calc(100% - 10px);
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
 
+/* Nhóm mỗi biến (name + % value) */
+.variable {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Cảnh báo khi % không hợp lệ */
+.warning {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Kết quả biểu đồ */
+#chart-output {
+  max-width: 500px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  margin-left: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
 
