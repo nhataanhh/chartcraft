@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button class="toggle-btn" id="themeToggle" title="Toggle theme">🌙</button>
   <h1>Create Your Pie Chart</h1>
 
   <div class="form-container">
@@ -25,18 +26,24 @@
 
     <button onclick="addVariable()">+ Add Variable</button>
     <p id="warning" class="warning"></p>
-
     <button onclick="generatePieChart()">Create Chart</button>
   </div>
 
   <div id="chart-output">
-    <canvas id="pieCanvas" width="400" height="400"></canvas>
+    <canvas id="pieCanvas" width="500" height="400"></canvas>
   </div>
   <div style="text-align: center; margin-top: 30px;">
     <a href="index.html" class="btn">← Back to Home</a>
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="pie chart.js"></script>
+  <script>
+  const toggleBtn = document.getElementById("themeToggle");
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+    toggleBtn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
+  });
+</script>
+
 </body>
 </html>

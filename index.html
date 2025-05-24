@@ -5,29 +5,154 @@
   <title>Place to Create Chart</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body class="dark">
+  <button class="toggle-btn" id="themeToggle" title="Toggle theme">🌙</button>   
   <h1> We Create Chart Here ! </h1>
   <p>Easily create pie, column, and line charts with your own data!</p>
 
   <div class="chart-container">
     <div class="chart">
       <h2>Pie Chart</h2>
-      <img src="pie chart.png" alt="pie chart" />
-      <a href="pie chart.html" class="btn">Create Pie Chart</a> 
+      <canvas id="myPieChart" width="400" height="400"></canvas>
+      <a href="pie chart.html" class="btn">Create Pie Chart</a>
+    
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const ctx = document.getElementById('myPieChart').getContext('2d');
+        const myPieChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Blue', 'Green', 'Yellow', 'Red'],
+            datasets: [{
+              data: [40, 25, 20, 15],
+              backgroundColor: ['#4285F4', '#34A853', '#FBBC05', '#EA4335'],
+              borderColor: '#fff',
+              borderWidth: 2
+            }]
+          },
+          options: {
+            animation: {
+              animateRotate: true,
+              animateScale: true,
+              duration: 1500
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+      </script>
     </div>
-  
+
     <div class="chart">
       <h2>Column Chart</h2>
-      <img src="bar chart.png" alt="bar chart" />
-      <a href="bar chart.html" class="btn">Create Bar Chart</a> 
+      <canvas id="barChart" width="400" height="400"></canvas>
+      <a href="bar chart.html" class="btn">Create Bar Chart</a>
+    
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const ctxBar = document.getElementById('barChart').getContext('2d');
+        new Chart(ctxBar, {
+          type: 'bar',
+          data: {
+            labels: ['A', 'B', 'C', 'D'],
+            datasets: [{
+              label: 'Value',
+              data: [10, 20, 30, 40],
+              backgroundColor: ['#4285F4', '#00C8F0', '#34A853', '#EA4335'],
+              borderRadius: 5
+            }]
+          },
+          options: {
+            animation: {
+              duration: 1500,
+              easing: 'easeOutBounce'
+            },
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+      </script>
     </div>
-  
+
     <div class="chart">
       <h2>Line Chart</h2>
-      <img src="line chart.png" alt="line chart" />
-      <a href="line chart.html" class="btn">Create Line Chart</a> 
+      <canvas id="lineChart" width="400" height="400"></canvas>
+      <a href="line chart.html" class="btn">Create Line Chart</a>
+    
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const ctxLine = document.getElementById('lineChart').getContext('2d');
+        new Chart(ctxLine, {
+          type: 'line',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+              label: 'Sales',
+              data: [5, 15, 10, 20, 25, 30],
+              fill: false,
+              borderColor: '#4285F4',
+              backgroundColor: '#4285F4',
+              tension: 0.4,
+              pointRadius: 5,
+              pointHoverRadius: 7
+            }]
+          },
+          options: {
+            animation: {
+              duration: 2000,
+              easing: 'easeInOutSine'
+            },
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+      </script>
     </div>
-  </div>
+    
+  
 
+  <script>
+    // Tạo sao
+    const starCount = 80;
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      if (Math.random() < 0.3) {
+        star.classList.add("moving");
+        star.style.animationDelay = `${Math.random() * 10}s`;
+      }
+      star.style.opacity = Math.random() * 0.5 + 0.3;
+      document.body.appendChild(star);
+    }
+  
+    // Xử lý nút chuyển chế độ
+    const toggleBtn = document.getElementById("themeToggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      toggleBtn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
+    });
+  </script>
+  
 </body>
 </html>

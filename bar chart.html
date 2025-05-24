@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button class="toggle-btn" id="themeToggle" title="Toggle theme">🌙</button>
   <h1>Create Your Bar Chart</h1>
 
   <div class="form-container">
@@ -33,6 +34,14 @@
   <div style="text-align: center; margin-top: 30px;">
     <a href="index.html" class="btn">← Back to Home</a>
   </div>
+  <script>
+  const toggleBtn = document.getElementById("themeToggle");
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+    toggleBtn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
+  });
+</script>
+
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="bar chart.js"></script>
